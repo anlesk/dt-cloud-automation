@@ -1,4 +1,5 @@
-spec_version: '0.1.0’
+---
+spec_version: '0.1.0'
 dtCreds: dynatrace
 dashboard: query
 attachRules:
@@ -6,9 +7,9 @@ attachRules:
   - meTypes:
     - SERVICE
     tags:
-    - context: CONTEXTLESS
-      key: keptn_stage
-      value: $STAGE
     - context: KUBERNETES
       key: app
       value: $SERVICE
+    - context: CONTEXTLESS
+      key: keptn_stage
+      value: $STAGE
