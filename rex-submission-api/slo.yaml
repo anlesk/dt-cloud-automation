@@ -18,6 +18,26 @@ objectives:
       warning: []
       weight: 1
       key_sli: false
+    - sli: "response_time_p95_ph"
+      displayName: "Response Time 95th Percentile"
+      key_sli: false
+      pass:             # pass if (relative change <= 10% AND absolute value is < 600ms)
+        - criteria:
+            - "<=+10%"  # relative values require a prefixed sign (plus or minus)
+            - "<800"    # absolute values only require a logical operator
+      warning:          # if the response time is below 800ms, the result should be a warning
+        - criteria:
+            - "<=1000"
+      weight: 1
+    - sli: "error_rate"
+      displayName: "Error Rate"
+      pass:
+        - criteria:
+            - "<=+5%"
+            - "<2"
+      warning:
+        - criteria:
+            - "<5"
 total_score:
     pass: 90%
     warning: 75%
