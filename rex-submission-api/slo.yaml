@@ -38,7 +38,7 @@ objectives:
         - criteria:
             - "<=+25%"
             - "<=3"
-       weight: 1
+      weight: 1
 total_score:
     pass: 90%
     warning: 75%
