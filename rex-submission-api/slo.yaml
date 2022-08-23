@@ -15,7 +15,7 @@ objectives:
             - "<800"    # absolute values only require a logical operator
       warning:          # if the response time is below 800ms, the result should be a warning
         - criteria:
-            - "<=1000"
+            - "<=600"
       weight: 1
     - sli: "error_rate"
       displayName: "Error Rate"
@@ -25,7 +25,20 @@ objectives:
             - "<2"
       warning:
         - criteria:
-            - "<5"
+            - "<=+3%"
+            - "<1"
+      weight: 2
+    - sli: "jvm_cpu"
+      displayName: "JVM CPU"
+      pass:
+        - criteria:
+          - "<=+50%"
+          - "<=5"
+      warning:
+        - criteria:
+          - "<=+25%"
+          - "<=3"
+       weight: 1
 total_score:
     pass: 90%
     warning: 75%
