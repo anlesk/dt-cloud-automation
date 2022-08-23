@@ -2,4 +2,4 @@ spec_version: 0.1.4
 indicators:
     response_time_p95_ph: "metricSelector=builtin:service.response.time:merge(\"dt.entity.service\"):percentile(95)&entitySelector=tag(k8s-namespace:qa3),tag([Kubernetes]app:$SERVICE),tag(keptn_stage:$STAGE),type(SERVICE)"
     error_rate: "metricSelector=builtin:service.errors.total.rate:merge(\"dt.entity.service\"):avg&entitySelector=tag(k8s-namespace:qa3),tag([Kubernetes]app:$SERVICE),tag(keptn_stage:$STAGE),type(SERVICE)"
-    jvm_cpu: "metricSelector=builtin:tech.generic.cpu.usage:merge(\"dt.entity.process_group_instance\"):median:splitBy(\"dt.entity.process_group_instance\")&entitySelector=tag(keptn_project:$PROJECT),tag(keptn_stage:$STAGE),tag(keptn_service:$SERVICE),type(PROCESS_GROUP_INSTANCE)"
+    jvm_cpu: "metricSelector=builtin:tech.generic.cpu.usage:median:splitBy(\"dt.entity.process_group_instance\")&entitySelector=tag(keptn_project:$PROJECT),tag(keptn_stage:$STAGE),tag(keptn_service:$SERVICE),type(PROCESS_GROUP_INSTANCE)"
