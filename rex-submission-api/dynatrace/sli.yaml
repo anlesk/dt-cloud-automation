@@ -3,3 +3,4 @@ indicators:
     failure_rate: entitySelector=type(SERVICE),tag("[Kubernetes]app:rex-submission-api"),mzId(3935631180237192008)&metricSelector=builtin:service.errors.total.rate:splitBy():avg:names
     response_p90: MV2;MicroSecond;entitySelector=type(SERVICE),tag("[Kubernetes]app:rex-submission-api"),mzId(3935631180237192008)&metricSelector=builtin:service.response.server:splitBy():percentile(90):names
     response_time_p95_ph: "metricSelector=builtin:service.response.time:merge(\"dt.entity.service\"):percentile(95)&entitySelector=tag(k8s-namespace:qa3),tag([Kubernetes]app:$SERVICE),tag(keptn_stage:$STAGE),type(SERVICE)"
+    error_rate: "metricSelector=builtin:service.errors.total.count:merge(\"dt.entity.service\"):avg&entitySelector=tag(k8s-namespace:qa3),tag([Kubernetes]app:$SERVICE),tag(keptn_stage:$STAGE),type(SERVICE)"
